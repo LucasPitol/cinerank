@@ -1,0 +1,41 @@
+$primary:#D32F2F;
+$light50: #e6d2d2;
+$light: #F44336;
+$dark: #B71C1C;
+
+$main-text-color: #FAFAFA;
+$light-text-color: #9e9e9e;
+$card-color: #171717;
+
+$primary-pallete: (
+    50: #e6dddd,
+    100: #e6d2d2,
+    200: #e6aeae,
+    300: #F44336,
+    400: #d3382d,
+    500: #D32F2F, // original primary color you built this map around
+    600: #be2a2a,
+    700: #ce3232,
+    800: #cc2323,
+    900: #B71C1C,
+    A100: #ffddc1,
+    A200: #ffc698,
+    A400: #ffac67,
+    A700: #FA9746,
+    contrast: (
+      50: #000000,
+      100: #000000,
+      200: #000000,
+      300: #000000,
+      400: #ffffff,
+      500: #ffffff,
+      600: #ffffff,
+      700: #ffffff,
+      800: #ffffff,
+      900: #ffffff,
+      A100: #000000,
+      A200: #000000,
+      A400: #ffffff,
+      A700: #ffffff
+    )
+);
