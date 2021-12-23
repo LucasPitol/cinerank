@@ -1,0 +1,110 @@
+@import "../../utils/variables.scss";
+
+.back-g {
+    height: 100%;
+    background-color: black;
+
+    .drawer-container {
+        width: 100%;
+        height: 100%;
+
+        .side-nav {
+            border: 0px solid $card-color;
+            border-style: hidden hidden hidden hidden;
+            display: flex;
+            width: 180px;
+            background-color: $card-color;
+            box-shadow: 0 3px 8px 0 rgba(66, 66, 66, 0.2);
+
+            .title {
+                text-align: center;
+                margin-top: 20px;
+                margin-bottom: 20px;
+
+                span {
+                    font-weight: bold;
+                    size: 20px;
+                }
+            }
+
+            .options-holder {
+                margin-top: 40px;
+
+                .option-section {
+                    // background-color: black;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    text-align: center;
+                    cursor: pointer;
+                    text-align: left;
+
+                    .option-holder,
+                    .selected-marker {
+                        display: inline-flex;
+                    }
+
+                    .option-holder {
+                        // margin: auto;
+
+                        .selected-icon {
+                            margin-right: 20px;
+                            margin-left: 20px;
+                            color: $primary;
+                        }
+
+                        .unselected-icon {
+                            margin-right: 20px;
+                            margin-left: 20px;
+                            color: $light-text-color;
+                        }
+                    }
+
+                    .selected-marker {
+                        position: absolute;
+                        width: 5px;
+                        height: 20px;
+                        background-color: $primary;
+                        border-radius: 20px;
+                        right: 0;
+                    }
+                }
+
+                .fab-holder {
+                    text-align: center;
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translate(-50%, 0);
+                    margin-bottom: 20px;
+
+                    mat-icon {
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        .side-nav-content {
+            background-color: white;
+            height: 100%;
+
+            .loader {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(255, 255, 255, 0.8);
+                text-align: center;
+
+                .loader-spiner {
+                    display: block;
+                    margin: auto;
+                    margin-top: 180px;
+                }
+            }
+
+            .content-page {
+                height: 100%;
+            }
+        }
+    }
+}

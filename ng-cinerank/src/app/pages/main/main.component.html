@@ -1,1 +1,46 @@
-<span>Mainzin</span>
+<div class="back-g">
+    <mat-drawer-container class="drawer-container">
+        <mat-drawer mode="side" opened class="side-nav">
+            <div class="title">
+                <span>Cinerank</span>
+            </div>
+            <div class="options-holder">
+                <div class="option-section" (click)="switchPage(listPageIndex)">
+                    <div class="option-holder">
+                        <mat-icon
+                            [ngClass]="{'selected-icon': currentPageIndex == listPageIndex, 'unselected-icon' : currentPageIndex != listPageIndex}"
+                            aria-hidden="false">home</mat-icon>
+                        <span>Home</span>
+                    </div>
+                </div>
+                <div class="option-section" (click)="switchPage(dashboardPageIndex)">
+                    <div class="option-holder">
+                        <mat-icon
+                            [ngClass]="{'selected-icon': currentPageIndex == dashboardPageIndex, 'unselected-icon' : currentPageIndex != dashboardPageIndex}"
+                            aria-hidden="false">pie_chart</mat-icon>
+                        <span>Dashboard</span>
+                    </div>
+                </div>
+
+            </div>
+        </mat-drawer>
+        <mat-drawer-content class="side-nav-content">
+
+            <div *ngIf="loading" class="loader">
+                <mat-spinner class="loader-spiner"></mat-spinner>
+            </div>
+
+            <div *ngIf="!loading">
+                <div *ngIf="currentPageIndex == listPageIndex" class="content-page">
+                    <home-component></home-component>
+                </div>
+
+                <div *ngIf="currentPageIndex == dashboardPageIndex">
+                    <dashboard-component></dashboard-component>
+                </div>
+            </div>
+
+
+        </mat-drawer-content>
+    </mat-drawer-container>
+</div>

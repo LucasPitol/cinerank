@@ -16,11 +16,11 @@ $ng-cinerank-theme: mat-light-theme($ng-cinerank-primary, $ng-cinerank-accent, $
 html,
 body {
     height: 100%;
+    background-color: black;
 }
 body {
     margin: 0;
     font-family: "Montserrat", Roboto, sans-serif;
-    background-color: black;
 }
 
 span {

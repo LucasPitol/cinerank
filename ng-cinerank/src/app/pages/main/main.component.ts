@@ -10,13 +10,17 @@ import { Constants } from "src/app/utils/constants";
 export class MainComponent implements OnInit {
 
     listPageIndex = Constants.listPageIndex
-    graphPageIndex = Constants.dashboardPageIndex
+    dashboardPageIndex = Constants.dashboardPageIndex
     currentPageIndex: number
     loading: boolean
 
     ngOnInit(): void {
         this.loading = false
         this.currentPageIndex = this.listPageIndex
+    }
+
+    switchPage(index) {
+        this.currentPageIndex = index
     }
 
 }
