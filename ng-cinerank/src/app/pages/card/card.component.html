@@ -1,0 +1,16 @@
+<div [ngClass]="{'card-selected': movieSelectedId == movieDto.id, 'card' : movieSelectedId != 'movieDto.id' }">
+    <div class="card-image">
+        <img [src]="movieDto.imageUrl">
+        <div class="dark-curtain">
+            <!-- <p class="descricao">
+                {{card.resumo}}
+            </p> -->
+        </div>
+    </div>
+</div>
+<!-- <div [ngClass]="{'card-selected': personSelectedId == person.id, 'card' : personSelectedId != 'person.id' }">
+    <div class="text-holder">
+        <span>{{person.name}}</span>
+        <p>{{person.country}}</p>
+    </div>
+</div> -->

@@ -10,6 +10,8 @@ import { MatButtonModule, MatIconModule, MatProgressSpinnerModule, MatRippleModu
 import { routing } from './app.router';
 import { HomeComponent } from './pages/home/home.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { CardComponent } from './pages/card/card.component';
+import { MovieService } from './services/movie-service';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
     MainComponent,
     HomeComponent,
     DashboardComponent,
+    CardComponent,
   ],
   imports: [
     routing,
@@ -29,7 +32,10 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
     MatIconModule,
     MatProgressSpinnerModule,
   ],
-  providers: [],
+  providers: [
+    MovieService,
+    // SidenavService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

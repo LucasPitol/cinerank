@@ -1,3 +1,33 @@
 <div class="back">
-    <span>Home</span>
+    <mat-drawer-container class="drawer-container" autosize>
+        <mat-drawer #sidenav class="side-nav" mode="side" position="end">
+
+            <div matRipple class="refresh-holder" (click)="closeDrawer()">
+                <mat-icon class="icon-class">close</mat-icon>
+            </div>
+
+        </mat-drawer>
+
+        <div class="sidenav-content">
+            <div matRipple class="refresh-holder" (click)="getMovieList()">
+                <mat-icon class="icon-class">refresh</mat-icon>
+            </div>
+
+            <div *ngIf="loading" class="loader">
+                <mat-spinner class="loader-spiner"></mat-spinner>
+            </div>
+
+            <div *ngIf="!loading" class="background">
+
+                <div class="cards-holder">
+                    <div *ngFor="let movieDto of movieDtoList" class="card-holder">
+                        <card-component (click)="selectMovie(movieDto)" [movieDto]="movieDto"
+                            [movieSelectedId]="movieSelectedId">
+                        </card-component>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </mat-drawer-container>
 </div>
