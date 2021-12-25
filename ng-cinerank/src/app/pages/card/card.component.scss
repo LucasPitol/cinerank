@@ -3,38 +3,41 @@
 .card {
     width: 170px;
     height: 200px;
-    // background-color: white;
-    box-shadow: 0 3px 8px 0 rgba(66, 66, 66, 0.2);
+    // box-shadow: 0 3px 8px 0 rgba(66, 66, 66, 0.2);
     margin: 20px;
-    // border-radius: 12px;
+    border-radius: 3px;
     display: inline-block;
     cursor: pointer;
     transition: 0.3s;
 
     .card-image {
-        border-radius: 3px 3px 0 0;
-        /* height: 170px; */
+        border-radius: 3px;
         position: relative;
         overflow: hidden;
 
         img {
             width: 100%;
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* filter: grayscale(1); */
+            transition-property: filter width;
             transition-duration: 0.3s;
+        }
 
-            .dark-curtain {
-                border-radius: 3px 3px 0 0;
-                display: hide;
-                position: relative;
-                width: 170px;
-                height: 200px;
-                background-color: rgba(0, 0, 0, 0);
-                transition: 0.3s;
-            }
+        .dark-curtain {
+            display: hide;
+            position: relative;
+            width: 170px;
+            height: 200px;
+            background-color: rgba(0, 0, 0, 0);
+            transition: 0.3s;
+        }
 
-            .dark-curtain:hover {
-                display: block;
-                background-color: rgba(0, 0, 0, 0.6);
-            }
+        .dark-curtain:hover {
+            display: block;
+            background-color: rgba(0, 0, 0, 0.7);
         }
     }
 }
@@ -50,7 +53,7 @@
     background-color: $primary;
     box-shadow: 0 3px 8px 0 rgba(66, 66, 66, 0.2);
     margin: 20px;
-    border-radius: 12px;
+    border-radius: 3px;
     display: inline-block;
     cursor: pointer;
     transition: 0.3s;
