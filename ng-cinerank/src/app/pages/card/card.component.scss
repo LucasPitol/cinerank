@@ -33,11 +33,21 @@
             height: 200px;
             background-color: rgba(0, 0, 0, 0);
             transition: 0.3s;
+
+            span {
+                color: rgba(0, 0, 0, 0);
+                transition: 0.3s;
+            }
         }
 
         .dark-curtain:hover {
             display: block;
             background-color: rgba(0, 0, 0, 0.7);
+
+            span {
+                color: $main-text-color;
+                transition: 0.3s;
+            }
         }
     }
 }
@@ -45,6 +55,10 @@
 .card:hover {
     transition: 0.3s;
     box-shadow: 0 10px 20px 0 rgba(66, 66, 66, 0.2);
+
+    .card-image img {
+        width: 110%;
+    }
 }
 
 .card-selected {
