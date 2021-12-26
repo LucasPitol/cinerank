@@ -1,29 +1,50 @@
 import { Environment } from "../environments/environment";
 import { MovieDto } from "../models/dtos/movie-dto";
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from "@angular/core";
+import { Constants } from "../utils/constants";
 
+@Injectable()
 export class MovieService {
+
+    constructor(private http: HttpClient) { }
 
     async getMovieList() {
         var movieDtoList: MovieDto[] = []
 
         var url = (Environment.tmdbBaseApiUrl + 'movie/top_rated' + Environment.tmdbApiKey)
 
-        // var m1 = new MovieDto()
-        // m1.title = 'Tropa de Elite 2'
-        // m1.imageUrl = 'https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/87/90/29/19962728.jpg'
-        // m1.cast = 'Wagner Moura, André Ramiro, Milhem Cortaz'
-        // m1.production = 'José Padilha'
-        // m1.rating = 4.7
+        this.http.get(url, {
+            params: {
+                'language': Constants.ptLanguage
+            }
+        }).subscribe(data => {
 
-        // var m2 = new MovieDto()
-        // m2.title = 'Django Livre'
-        // m2.imageUrl = 'https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/90/07/53/20391069.jpg'
-        // m2.cast = 'Jamie Foxx, Christoph Waltz, Leonardo DiCaprio'
-        // m2.production = 'Quentin Tarantino'
-        // m2.rating = 4.3
+            data['results'].forEach(element => {
 
-        // movieDtoList.push(m1)
-        // movieDtoList.push(m2)
+                var movieDto = new MovieDto()
+
+                var posterPath = element.poster_path
+
+                movieDto.id = element.id
+                movieDto.title = element.title
+                movieDto.imageUrl = Environment.tmdbBaseImageUrl + posterPath
+                movieDto.rating = element.vote_average
+                movieDto.overview = element.overview
+
+                // genre_ids: (4) [16, 10751, 12, 14]
+                // overview: "A chegada de um caçador de lobos a uma cidadezinha irlandesa é o começo de uma grande aventura para Robyn, quando ela conhece na floresta uma menina com um estranho dom."
+                // popularity: 20.876
+                // release_date: "2020-10-26"
+                // title: "Wolfwalkers"
+                // video: false
+                // vote_average: 8.5
+
+                movieDtoList.push(movieDto)
+            });
+
+            return movieDtoList
+        })
 
         return movieDtoList
     }

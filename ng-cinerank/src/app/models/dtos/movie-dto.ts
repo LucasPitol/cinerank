@@ -1,8 +1,9 @@
 export class MovieDto {
-    // id: string
+    id: number
     title: string
     imageUrl: string
-    cast: string
-    production: string
+    // cast: string
+    // production: string
     rating: number
+    overview: string
 }

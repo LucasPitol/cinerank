@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainComponent } from './pages/main/main.component';
 import { MatButtonModule, MatIconModule, MatProgressSpinnerModule, MatRippleModule, MatSidenavModule } from '@angular/material';
-
+import { HttpClientModule } from '@angular/common/http';
 import { routing } from './app.router';
 import { HomeComponent } from './pages/home/home.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
@@ -26,6 +26,7 @@ import { MovieService } from './services/movie-service';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatSidenavModule,
     MatButtonModule,
     MatRippleModule,

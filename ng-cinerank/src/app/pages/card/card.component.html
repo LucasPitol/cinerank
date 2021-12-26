@@ -2,18 +2,21 @@
     <div class="card-image">
         <img [src]="movieDto.imageUrl">
         <div class="dark-curtain">
-            <span>
-                {{movieDto.title}}
-            </span>
-            <!-- <p class="descricao">
-                {{card.resumo}}
-            </p> -->
+            <div class="container">
+
+                <span class="title">
+                    {{movieDto.title}}
+                </span>
+
+                <p
+                    [ngClass]="{'rating-green': movieDto.rating >= 8, 'rating-orange' : movieDto.rating < 8 && movieDto.rating >= 5, 'rating-red' : movieDto.rating < 5}">
+                    {{movieDto.rating}}</p>
+
+                <p class="overview">
+                    {{(movieDto.overview.length > 60) ? (movieDto.overview | slice:0:60)+'...' : (movieDto.overview)}}
+                </p>
+
+            </div>
         </div>
     </div>
 </div>
-<!-- <div [ngClass]="{'card-selected': personSelectedId == person.id, 'card' : personSelectedId != 'person.id' }">
-    <div class="text-holder">
-        <span>{{person.name}}</span>
-        <p>{{person.country}}</p>
-    </div>
-</div> -->

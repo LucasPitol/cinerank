@@ -3,7 +3,6 @@
 .card {
     width: 170px;
     height: 200px;
-    // box-shadow: 0 3px 8px 0 rgba(66, 66, 66, 0.2);
     margin: 20px;
     border-radius: 3px;
     display: inline-block;
@@ -18,10 +17,9 @@
         img {
             width: 100%;
             position: absolute;
-            top: 45%;
+            top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            /* filter: grayscale(1); */
             transition-property: filter width;
             transition-duration: 0.3s;
         }
@@ -34,9 +32,23 @@
             background-color: rgba(0, 0, 0, 0);
             transition: 0.3s;
 
-            span {
-                color: rgba(0, 0, 0, 0);
-                transition: 0.3s;
+            .container {
+                padding: 10px;
+
+                .title {
+                    font-weight: bold;
+                }
+
+                span {
+                    color: rgba(0, 0, 0, 0);
+                    transition: 0.3s;
+                }
+
+                p {
+                    color: rgba(0, 0, 0, 0);
+                    transition: 0.3s;
+                }
+
             }
         }
 
@@ -44,9 +56,33 @@
             display: block;
             background-color: rgba(0, 0, 0, 0.7);
 
-            span {
-                color: $main-text-color;
-                transition: 0.3s;
+            .container {
+                span {
+                    color: $main-text-color;
+                    transition: 0.3s;
+                }
+
+                .icon {
+                    color: $light-text-color;
+                    transition: 0.3s;
+                }
+
+                p {
+                    color: $light-text-color;
+                    transition: 0.3s;
+                }
+
+                .rating-green {
+                    color: #4caf50;
+                }
+
+                .rating-orange {
+                    color: #ff9800;
+                }
+
+                .rating-red {
+                    color: #f44336;
+                }
             }
         }
     }
@@ -62,8 +98,6 @@
 }
 
 .card-selected {
-    width: 170px;
-    height: 200px;
     background-color: $primary;
     box-shadow: 0 3px 8px 0 rgba(66, 66, 66, 0.2);
     margin: 20px;
