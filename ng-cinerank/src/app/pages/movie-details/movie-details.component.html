@@ -1,0 +1,13 @@
+<div class="container" *ngIf="selectedMovie != null">
+    <div class="img-holder">
+        <img [src]="selectedMovie.imageUrl">
+    </div>
+
+    <div class="title-holder">
+        <span>{{selectedMovie.title}}</span>
+    </div>
+
+    <div *ngIf="loading" class="loader">
+        <mat-spinner class="loader-spiner"></mat-spinner>
+    </div>
+</div>

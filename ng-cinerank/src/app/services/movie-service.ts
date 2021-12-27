@@ -9,14 +9,15 @@ export class MovieService {
 
     constructor(private http: HttpClient) { }
 
-    async getMovieList() {
+    async getMovieList(page: any, oldList: MovieDto[]) {
         var movieDtoList: MovieDto[] = []
 
         var url = (Environment.tmdbBaseApiUrl + 'movie/top_rated' + Environment.tmdbApiKey)
 
         this.http.get(url, {
             params: {
-                'language': Constants.ptLanguage
+                'language': Constants.ptLanguage,
+                'page': page,
             }
         }).subscribe(data => {
 
@@ -32,18 +33,12 @@ export class MovieService {
                 movieDto.rating = element.vote_average
                 movieDto.overview = element.overview
 
-                // genre_ids: (4) [16, 10751, 12, 14]
-                // overview: "A chegada de um caçador de lobos a uma cidadezinha irlandesa é o começo de uma grande aventura para Robyn, quando ela conhece na floresta uma menina com um estranho dom."
-                // popularity: 20.876
-                // release_date: "2020-10-26"
-                // title: "Wolfwalkers"
-                // video: false
-                // vote_average: 8.5
-
                 movieDtoList.push(movieDto)
             });
 
-            return movieDtoList
+            oldList.concat(movieDtoList)
+
+            return oldList
         })
 
         return movieDtoList

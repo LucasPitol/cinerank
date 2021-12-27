@@ -12,6 +12,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { CardComponent } from './pages/card/card.component';
 import { MovieService } from './services/movie-service';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { SidenavService } from './services/side-nav-service';
+import { MovieDetailsComponent } from './pages/movie-details/movie-details.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,7 @@ import { MovieService } from './services/movie-service';
     HomeComponent,
     DashboardComponent,
     CardComponent,
+    MovieDetailsComponent,
   ],
   imports: [
     routing,
@@ -27,6 +31,7 @@ import { MovieService } from './services/movie-service';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    InfiniteScrollModule,
     MatSidenavModule,
     MatButtonModule,
     MatRippleModule,
@@ -35,7 +40,7 @@ import { MovieService } from './services/movie-service';
   ],
   providers: [
     MovieService,
-    // SidenavService,
+    SidenavService,
   ],
   bootstrap: [AppComponent]
 })

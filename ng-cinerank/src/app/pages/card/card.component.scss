@@ -48,7 +48,6 @@
                     color: rgba(0, 0, 0, 0);
                     transition: 0.3s;
                 }
-
             }
         }
 
@@ -74,14 +73,17 @@
 
                 .rating-green {
                     color: #4caf50;
+                    font-weight: bold;
                 }
 
                 .rating-orange {
                     color: #ff9800;
+                    font-weight: bold;
                 }
 
                 .rating-red {
                     color: #f44336;
+                    font-weight: bold;
                 }
             }
         }
@@ -106,15 +108,6 @@
     cursor: pointer;
     transition: 0.3s;
 
-    .text-holder {
-        span {
-            transition: 0.3s;
-            color: white;
-        }
-
-        p {
-            transition: 0.3s;
-            color: white;
-        }
-    }
+    border: 5px solid $primary;
+    border-style: hidden hidden hidden solid;
 }

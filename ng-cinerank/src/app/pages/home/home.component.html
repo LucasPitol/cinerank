@@ -6,10 +6,12 @@
                 <mat-icon class="icon-class">close</mat-icon>
             </div>
 
+            <movie-details-component [selectedMovie]="selectedMovie"></movie-details-component>
+
         </mat-drawer>
 
         <div class="sidenav-content">
-            <div matRipple class="refresh-holder" (click)="getMovieList()">
+            <div matRipple class="refresh-holder" (click)="refreshData()">
                 <mat-icon class="icon-class">refresh</mat-icon>
             </div>
 
@@ -17,9 +19,10 @@
                 <mat-spinner class="loader-spiner"></mat-spinner>
             </div>
 
-            <div *ngIf="!loading" class="background">
+            <div *ngIf="movieDtoList.length > 0" class="background">
 
-                <div class="cards-holder">
+                <div class="cards-holder" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50"
+                    (scrolled)="onScroll()">
                     <div *ngFor="let movieDto of movieDtoList" class="card-holder">
                         <card-component (click)="selectMovie(movieDto)" [movieDto]="movieDto"
                             [movieSelectedId]="movieSelectedId">
@@ -27,6 +30,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
 
     </mat-drawer-container>
