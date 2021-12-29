@@ -1,4 +1,4 @@
-<div [ngClass]="{'card-selected': movieSelectedId == movieDto.id, 'card' : movieSelectedId != 'movieDto.id' }">
+<div [ngClass]="{'card-selected': movieSelectedId == movieDto.id, 'card' : movieSelectedId != 'movieDto.id' }" (click)="goToMovieDetails()">
     <div class="card-image">
         <img [src]="movieDto.imageUrl">
         <div class="dark-curtain">

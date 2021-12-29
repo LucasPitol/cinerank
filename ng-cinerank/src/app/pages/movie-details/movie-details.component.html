@@ -1,13 +1,25 @@
-<div class="container" *ngIf="selectedMovie != null">
-    <div class="img-holder">
-        <img [src]="selectedMovie.imageUrl">
-    </div>
+<div class="back">
 
-    <div class="title-holder">
-        <span>{{selectedMovie.title}}</span>
+    <div class="header">
+        <div class="header-icon-holder">
+            <mat-icon class="icon-class" (click)="goBack()">chevron_left</mat-icon>
+        </div>
+        <div class="header-title-holder">
+            <span>Detalhes</span>
+        </div>
     </div>
 
     <div *ngIf="loading" class="loader">
         <mat-spinner class="loader-spiner"></mat-spinner>
+    </div>
+
+    <div class="container" *ngIf="!loading">
+        <div class="img-holder">
+            <img [src]="selectedMovie.imageUrl">
+        </div>
+
+        <div class="title-holder">
+            <span>{{selectedMovie.title}}</span>
+        </div>
     </div>
 </div>

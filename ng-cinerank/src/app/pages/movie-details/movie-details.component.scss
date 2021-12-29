@@ -1,25 +1,35 @@
-.container {
-    text-align: center;
-    padding-right: 20px;
-    padding-left: 20px;
+@import "../../utils/variables.scss";
 
-    .img-holder {
-        margin: auto;
-        margin-top: 80px;
-        position: relative;
-        overflow: hidden;
-        width: 200px;
+.back {
+    .header {
+        background-color: $card-color;
+        width: 100%;
+        height: 50px;
 
-        img {
-            width: 100%;
+            .header-icon-holder {
+                position: absolute;
+                margin-top: 12px;
+                margin-left: 20px;
+    
+                .icon-class {
+                    color: $main-text-color;
+                    cursor: pointer;
+                }
+            }
+
+
+        .header-title-holder {
+            margin-top: 12px;
+            margin-left: 60px;
+
+            span {
+                font-weight: bold;
+            }
         }
-    }
 
-    .title-holder {
-        margin-top: 40px;
-
-        span {
-            font-weight: bold;
+        .header-icon-holder,
+        .header-title-holder {
+            display: inline-block;
         }
     }
 
@@ -32,6 +42,32 @@
             display: block;
             margin: auto;
             margin-top: 180px;
+        }
+    }
+
+    .container {
+        text-align: center;
+        padding-right: 20px;
+        padding-left: 20px;
+
+        .img-holder {
+            margin: auto;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+            width: 200px;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .title-holder {
+            margin-top: 40px;
+
+            span {
+                font-weight: bold;
+            }
         }
     }
 }
