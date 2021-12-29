@@ -10,6 +10,5 @@ import { MovieDto } from "src/app/models/dtos/movie-dto";
 export class CardComponent {
     
     @Input("movieDto") movieDto: MovieDto
-    @Input("movieSelectedId") movieSelectedId: string
 
 }

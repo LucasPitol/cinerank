@@ -13,8 +13,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { CardComponent } from './pages/card/card.component';
 import { MovieService } from './services/movie-service';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
-import { SidenavService } from './services/side-nav-service';
 import { MovieDetailsComponent } from './pages/movie-details/movie-details.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [
@@ -37,10 +37,10 @@ import { MovieDetailsComponent } from './pages/movie-details/movie-details.compo
     MatRippleModule,
     MatIconModule,
     MatProgressSpinnerModule,
+    ScrollingModule,
   ],
   providers: [
     MovieService,
-    SidenavService,
   ],
   bootstrap: [AppComponent]
 })

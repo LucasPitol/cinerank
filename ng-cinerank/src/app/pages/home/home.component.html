@@ -1,14 +1,5 @@
 <div class="back">
-    <mat-drawer-container class="drawer-container" autosize>
-        <mat-drawer #sidenav class="side-nav" mode="side" position="end">
-
-            <div matRipple class="refresh-holder" (click)="closeDrawer()">
-                <mat-icon class="icon-class">close</mat-icon>
-            </div>
-
-            <movie-details-component [selectedMovie]="selectedMovie"></movie-details-component>
-
-        </mat-drawer>
+    <div class="drawer-container">
 
         <div class="sidenav-content">
             <div matRipple class="refresh-holder" (click)="refreshData()">
@@ -24,8 +15,7 @@
                 <div class="cards-holder" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50"
                     (scrolled)="onScroll()">
                     <div *ngFor="let movieDto of movieDtoList" class="card-holder">
-                        <card-component (click)="selectMovie(movieDto)" [movieDto]="movieDto"
-                            [movieSelectedId]="movieSelectedId">
+                        <card-component (click)="selectMovie(movieDto)" [movieDto]="movieDto">
                         </card-component>
                     </div>
                 </div>
@@ -33,5 +23,5 @@
 
         </div>
 
-    </mat-drawer-container>
+    </div>
 </div>
